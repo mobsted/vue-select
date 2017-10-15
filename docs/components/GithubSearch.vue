@@ -107,7 +107,7 @@
 		methods: {
 			getOptions(search, loading) {
 				loading(true)
-				this.$http.get('https://api.github.com/search/repositories', {q: search})
+				this.$http.get('https://api.github.com/search/repositories', {params: {q: search}})
 								.then(resp => {
 									this.options = resp.data.items
 									loading(false)
